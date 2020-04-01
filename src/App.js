@@ -15,12 +15,12 @@ class App extends React.Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" render={() => <PaletteList />}></Route>
+                <Route exact path="/" render={routeProps => <PaletteList {...routeProps} />} />
                 <Route
                     exact
                     path="/palette/:id"
                     render={routeProps => <Palette palette={generate(this.findPalette(routeProps.match.params.id))} />}
-                ></Route>
+                />
             </Switch>
         );
     }
