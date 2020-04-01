@@ -5,7 +5,7 @@ function generate(palette) {
     let newPalette = {
         paletteName: palette.paletteName,
         id: palette.id,
-        emoji: palette.id,
+        emoji: palette.emoji,
         colors: {}
     };
 

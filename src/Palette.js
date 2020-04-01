@@ -27,16 +27,18 @@ class Palette extends React.Component {
     }
 
     render() {
-        let { colors } = this.props.palette;
+        let { colors, paletteName, emoji } = this.props.palette;
         let { level, format } = this.state;
         const color = colors[level].map(color => <ColorBox key={color.name} name={color.name} background={color[format]} />);
 
         return (
             <div className="Palette">
-                {/* Navbar goes here */}
                 <Navbar level={level} format={format} handleFormat={this.handleFormat} sliderChange={this.sliderChange} />
                 <div className="Palette-colors">{color}</div>
-                {/* footer goes here */}
+                <footer className="Palette-footer">
+                    {paletteName}
+                    <span>{emoji}</span>
+                </footer>
             </div>
         );
     }
