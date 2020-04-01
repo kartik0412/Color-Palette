@@ -6,3 +6,20 @@
 .Palette-colors {
     height: 90%;
 }
+.slider {
+    width: 340px;
+    display: inline-block;
+    margin: 15px;
+}
+.rc-slider-track {
+    background-color: transparent;
+}
+.rc-slider-rail {
+    height: 8px;
+}
+.rc-slider-handle {
+    height: 20px;
+    width: 20px;
+    background-color: teal;
+    box-shadow: none;
+}
