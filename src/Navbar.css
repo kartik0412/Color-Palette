@@ -39,3 +39,6 @@
     background-color: teal;
     box-shadow: none;
 }
+.select-container {
+    align-self: flex-end;
+}

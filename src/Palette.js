@@ -7,9 +7,11 @@ class Palette extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            level: 500
+            level: 500,
+            format: "hex"
         };
         this.sliderChange = this.sliderChange.bind(this);
+        this.handleFormat = this.handleFormat.bind(this);
     }
 
     sliderChange(level) {
@@ -18,15 +20,21 @@ class Palette extends React.Component {
         });
     }
 
+    handleFormat(format) {
+        this.setState({
+            format
+        });
+    }
+
     render() {
         let { colors } = this.props.palette;
-        let { level } = this.state;
-        const color = colors[level].map(color => <ColorBox key={color.name} name={color.name} background={color.hex} />);
+        let { level, format } = this.state;
+        const color = colors[level].map(color => <ColorBox key={color.name} name={color.name} background={color[format]} />);
 
         return (
             <div className="Palette">
                 {/* Navbar goes here */}
-                <Navbar level={level} sliderChange={this.sliderChange} />
+                <Navbar level={level} format={format} handleFormat={this.handleFormat} sliderChange={this.sliderChange} />
                 <div className="Palette-colors">{color}</div>
                 {/* footer goes here */}
             </div>
