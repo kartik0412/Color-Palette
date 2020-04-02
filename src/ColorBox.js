@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import "./ColorBox.css";
+
 class ColorBox extends React.Component {
     constructor() {
         super();
@@ -21,11 +22,11 @@ class ColorBox extends React.Component {
     }
 
     render() {
-        const { background, name } = this.props;
+        const { background, name, paletteId, id } = this.props;
         const copied = this.state.copied;
         return (
-            <div style={{ background }} className="ColorBox">
-                <div style={{ background }} className={`copy-overlay ${copied && "show"}`} />
+            <div style={{ background }} className={`${this.props.toShow === false ? "SinglePalette ColorBox" : "ColorBox"}`}>
+                <div style={{ background }} className={`${copied ? "copy-overlay show" : "copy-overlay"}`} />
                 <div className="copy-container">
                     <div className="box-container">
                         <span>{name}</span>
@@ -33,13 +34,16 @@ class ColorBox extends React.Component {
                     <CopyToClipboard text={background} onCopy={this.handleCopy}>
                         <button className="copy-button">Copy</button>
                     </CopyToClipboard>
-                    <div className={`show-message ${copied && "show"}`}>
+                    <div className={`${copied ? "show-message show" : "show-message"}`}>
                         <h1>Copied!!</h1>
                         <p>{background}</p>
                     </div>
                 </div>
-
-                <span className="see-more"> MORE </span>
+                {this.props.toShow && (
+                    <Link exact to={`/palette/${paletteId}/${id}`}>
+                        <span className="see-more"> MORE </span>
+                    </Link>
+                )}
             </div>
         );
     }

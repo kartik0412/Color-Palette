@@ -9,7 +9,12 @@
     margin-bottom: -3.5px;
 }
 
-.copy-button {
+.SinglePalette.ColorBox {
+    height: 50%;
+}
+
+.copy-button,
+.goback-button {
     width: 100px;
     height: 30px;
     position: absolute;
@@ -26,6 +31,11 @@
     color: white;
     opacity: 0;
 }
+.goback-button {
+    opacity: 1;
+    cursor: pointer;
+}
+
 .ColorBox:hover .copy-button {
     opacity: 1;
     transition: 0.5s;

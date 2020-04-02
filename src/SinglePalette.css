@@ -1,0 +1,33 @@
+.Single-Palette {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.SinglePalette-colors {
+    height: 90%;
+}
+.SinglePalette-footer {
+    display: flex;
+    background-color: white;
+    height: 4vh;
+    text-transform: capitalize;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+}
+.SinglePalette-footer span {
+    font-weight: 1.5rem;
+    margin: 0 1rem;
+}
+.goback {
+    width: 20%;
+    height: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: -3.5px;
+    background-color: black;
+    cursor: default;
+}

@@ -26,12 +26,15 @@ class Navbar extends React.Component {
                         reactcolorPicker
                     </Link>
                 </div>
-                <div className="slider-container">
-                    <span>Level : {level}</span>
-                    <div className="slider">
-                        <Slider min={100} max={900} step={100} defaultValue={level} onAfterChange={sliderChange} />
+                {this.props.toShow && (
+                    <div className="slider-container">
+                        <span>Level : {level}</span>
+                        <div className="slider">
+                            <Slider min={100} max={900} step={100} defaultValue={level} onAfterChange={sliderChange} />
+                        </div>
                     </div>
-                </div>
+                )}
+
                 <div className="select-container">
                     <Select
                         labelId="demo-simple-select-label"

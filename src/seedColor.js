@@ -32,6 +32,7 @@ export default [
         colors: [
             { name: "Turquoise", color: "#1abc9c" },
             { name: "Emerald", color: "#2ecc71" },
+            { name: "Carrot", color: "#e67e22" },
             { name: "PeterRiver", color: "#3498db" },
             { name: "Amethyst", color: "#9b59b6" },
             { name: "WetAsphalt", color: "#34495e" },
@@ -41,7 +42,6 @@ export default [
             { name: "Wisteria", color: "#8e44ad" },
             { name: "MidnightBlue", color: "#2c3e50" },
             { name: "SunFlower", color: "#f1c40f" },
-            { name: "Carrot", color: "#e67e22" },
             { name: "Alizarin", color: "#e74c3c" },
             { name: "Clouds", color: "#ecf0f1" },
             { name: "Concrete", color: "#95a5a6" },

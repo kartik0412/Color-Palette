@@ -14,26 +14,40 @@ class Palette extends React.Component {
         this.handleFormat = this.handleFormat.bind(this);
     }
 
+    handleFormat(format) {
+        this.setState({
+            format
+        });
+    }
     sliderChange(level) {
         this.setState({
             level: level
         });
     }
 
-    handleFormat(format) {
-        this.setState({
-            format
-        });
-    }
-
     render() {
-        let { colors, paletteName, emoji } = this.props.palette;
+        let { colors, paletteName, emoji, id } = this.props.palette;
         let { level, format } = this.state;
-        const color = colors[level].map(color => <ColorBox key={color.name} name={color.name} background={color[format]} />);
+        const color = colors[level].map(color => (
+            <ColorBox
+                key={color.name}
+                paletteId={id}
+                name={color.name}
+                background={color[format]}
+                id={color.id}
+                toShow={true}
+            />
+        ));
 
         return (
             <div className="Palette">
-                <Navbar level={level} format={format} handleFormat={this.handleFormat} sliderChange={this.sliderChange} />
+                <Navbar
+                    toShow={true}
+                    level={level}
+                    format={format}
+                    handleFormat={this.handleFormat}
+                    sliderChange={this.sliderChange}
+                />
                 <div className="Palette-colors">{color}</div>
                 <footer className="Palette-footer">
                     {paletteName}
